@@ -1,4 +1,12 @@
 package pipeline.filters;
 
-public class ApplyDiscount {
+import model.Order;
+import pipeline.core.Filter;
+
+public class ApplyDiscount implements Filter {
+
+    @Override
+    public Order process(Order order) {
+        return null;
+    }
 }

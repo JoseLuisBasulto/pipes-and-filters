@@ -3,18 +3,81 @@ package model;
 import java.util.List;
 
 public class Order {
-    private Customer customer;
-    private List<Product> productList;
-    private OrderStatus orderStatus;
+    private final int idOrder;
+    private final Customer customer;
+    private final List<Product> productList;
+    private double subtotal;
+    private double taxes;
+    private double discount;
+    private double total;
+    private OrderState orderState;
+
+    public Order(int idOrder, Customer customer, List<Product> productList) {
+        this.idOrder = idOrder;
+        this.customer = customer;
+        this.productList = productList;
+        this.subtotal = 0.0;
+        this.taxes = 0.0;
+        this.discount = 0.0;
+        this.total = 0.0;
+        this.orderState = OrderState.NUEVO;
+    }
+
+    public int getIdOrder(){
+        return idOrder;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    public double getTaxes() {
+        return taxes;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public OrderState getOrderState() {
+        return orderState;
+    }
+
+    public void setOrderState(OrderState orderState) {
+        this.orderState = orderState;
+    }
+
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public void setTaxes(double taxes) {
+        this.taxes = taxes;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
 
     /*
-    Todavía faltan más cosas en esta clase, pero no sé como las vamos a implementar:
-    precio de cada producto; -> esto considero se tiene en la lista de productos
-    cantidad solicitada; -> podría ser un atributo de producto...
-    existencia disponible; -> podría ser un atributo de producto como su propio stock
-    subtotal; -> está la clase CalculateSubtotal ( puede ser una función getSubtotal() )
-    descuento; -> está la clase ApplyDiscount (aquí es supongo para ver el descuento aplicado)
-    impuestos; -> está la clase CalculateTaxes (aquí es supongo para ver el impuesto aplicado)
-    total; -> puede ser una función getTotal()
+    Dudas:
+    cantidad solicitada -> se refiere a la cantidad de productos solicitados?
+    existencia disponible -> de cada producto supongo...
      */
 }
