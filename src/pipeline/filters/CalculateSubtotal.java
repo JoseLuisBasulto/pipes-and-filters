@@ -1,4 +1,12 @@
 package pipeline.filters;
 
-public class CalculateSubtotal {
+import model.Order;
+import pipeline.core.Filter;
+
+public class CalculateSubtotal implements Filter {
+
+    @Override
+    public Order process(Order order) {
+        return null;
+    }
 }

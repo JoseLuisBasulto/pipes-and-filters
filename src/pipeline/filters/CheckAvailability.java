@@ -1,4 +1,12 @@
 package pipeline.filters;
 
-public class CheckAvailability {
+import model.Order;
+import pipeline.core.Filter;
+
+public class CheckAvailability implements Filter {
+
+    @Override
+    public Order process(Order order) {
+        return null;
+    }
 }
