@@ -10,8 +10,6 @@ public class ValidateData implements Filter {
 
     @Override
     public Order process(Order order) {
-        order.setOrderState(OrderState.VALIDADO);
-
         if(order.getCustomer() == null){
             throw new OrderException("El pedido no cuenta con un cliente.");
         }
@@ -28,8 +26,13 @@ public class ValidateData implements Filter {
             if(product.getQuantityOrdered() <= 0){
                 throw new OrderException("La cantidad solicitada de un producto debe ser mayor a 0.");
             }
+
+            if(product.getStock() < 0){
+                throw new OrderException("La cantidad en stock debe ser mayor o igual a 0.");
+            }
         }
 
+        order.setOrderState(OrderState.VALIDADO);
         System.out.println("Datos validados correctamente.");
         return order;
     }
