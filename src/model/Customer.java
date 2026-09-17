@@ -3,12 +3,10 @@ package model;
 public class Customer {
     private final int idCustomer;
     private final String name;
-    private final int telephone;
 
-    public Customer(int idCustomer, String name, int telephone) {
+    public Customer(int idCustomer, String name) {
         this.idCustomer = idCustomer;
         this.name = name;
-        this.telephone = telephone;
     }
 
     public int getIdCustomer() {
@@ -17,9 +15,5 @@ public class Customer {
 
     public String getName() {
         return name;
-    }
-
-    public int getTelephone(){
-        return telephone;
     }
 }
