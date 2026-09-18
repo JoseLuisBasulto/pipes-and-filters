@@ -21,6 +21,7 @@ public class CalculateSubtotal implements Filter {
         order.setSubtotal(subtotal);
         order.setOrderState(OrderState.SUBTOTAL_CALCULADO);
         System.out.println("Subtotal calculado correctamente.");
+
         return order;
     }
 }

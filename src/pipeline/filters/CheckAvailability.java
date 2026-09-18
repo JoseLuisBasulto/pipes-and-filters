@@ -22,6 +22,7 @@ public class CheckAvailability implements Filter {
 
         order.setOrderState(OrderState.DISPONIBILIDAD_CONFIRMADA);
         System.out.println("Disponibilidad confirmada correctamente.");
+
         return order;
     }
 }
