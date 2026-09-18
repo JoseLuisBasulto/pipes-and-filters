@@ -75,9 +75,10 @@ public class Order {
         this.total = total;
     }
 
-    /*
-    Dudas:
-    cantidad solicitada -> se refiere a la cantidad de productos solicitados?
-    existencia disponible -> de cada producto supongo...
-     */
+    @Override
+    public String toString(){
+        return "Pedido #" + getIdOrder() + "\nCliente: " + getCustomer().getName() +
+                "\nProductos:\n" + getProductList() + "\nSubtotal: " + getSubtotal() +
+                "\nIVA: " + getTaxes() + "\nTotal: " + getTotal();
+    }
 }

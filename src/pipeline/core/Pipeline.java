@@ -19,14 +19,15 @@ public class Pipeline {
             try {
                 order = filter.process(order);
                 // Se muestra el estado del pedido después de cada filtro.
-                System.out.println("-> Estado después de [" + filter.getClass().getSimpleName() + "]: " + order.getOrderState());
+                System.out.println("-> Estado después de [" + filter.getClass().getSimpleName() + "]: " + order.getOrderState() + "\n");
             }catch (OrderException e){
                 order.setOrderState(OrderState.RECHAZADO);
                 System.out.println("[ERROR EN: " + filter.getClass().getSimpleName() + "]");
                 System.out.println(e.getMessage());
-                System.out.println("Estado Final: " + order.getOrderState());
+                System.out.println("Estado Final: " + order.getOrderState() + "\n");
                 break;
             }
         }
+        System.out.println(order);
     }
 }
