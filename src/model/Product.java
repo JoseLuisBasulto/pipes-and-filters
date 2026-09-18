@@ -36,4 +36,9 @@ public class Product {
     public int getStock() {
         return stock;
     }
+
+    @Override
+    public String toString(){
+        return getQuantityOrdered() + "|" + getName() + "|" + getPrice() + "|" +getQuantityOrdered()*getPrice();
+    }
 }
